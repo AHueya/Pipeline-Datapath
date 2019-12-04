@@ -1,23 +1,21 @@
 `include "aluControl.v"
 
-module control(opCode, funCode, aluOp, seSrc, cpCtrl, memWrite, memRead, memToReg,
+module control(opCode, funCode, fw_opCode, fw_funCode, seSrc, cpCtrl, memWrite, memRead, memToReg,
                regWrite, seCtrl, aluSrc1, aluSrc4, fwSrc, pcSrc);
     input [3:0] opCode, funCode;
-    output reg [2:0] aluOp;
+    output reg [3:0] fw_opCode, fw_funCode;
     output reg [1:0] seSrc, cpCtrl, memWrite, memRead, memToReg;
     output reg regWrite, seCtrl, aluSrc1, aluSrc4, fwSrc, pcSrc;
 
-    wire [2:0] aluOp_tmp;
-
-    aluControl g1(.opCode(opCode), .funCode(funCode), .aluOp(aluOp_tmp));   //Calculates aluOp
-
     always @(*) begin
+        fw_opCode = opCode;
+        fw_funCode = funCode;
+
         regWrite = 0;
         seCtrl = 0;
         seSrc = 2'b00;
         aluSrc1 = 0;
         aluSrc4 = 0;
-        aluOp = aluOp_tmp;
         fwSrc = 0;
         pcSrc = 0;
         cpCtrl = 2'b00;

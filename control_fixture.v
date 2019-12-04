@@ -3,6 +3,7 @@
 module control_fixture;
 
     reg [3:0] opCode, funCode;
+    wire [3:0] fw_opCode, fw_funCode;
     wire [2:0] aluOp;
     wire [1:0] seSrc, cpCtrl, memWrite, memRead, memToReg;
     wire regWrite, seCtrl, aluSrc1, aluSrc4, fwSrc, pcSrc;
@@ -12,9 +13,9 @@ module control_fixture;
         $vcdpluson;
 
     initial
-        $monitor($time, " opCode = %b funCode = %b seCtrl = %b seSrc = %b aluSrc1 = %b aluSrc4 = %b \n fwSrc = %b pcSrc = %b memRead = %b memWrite = %b cpCtrl = %b regWrite = %b aluOp = %b memToReg = %b", opCode, funCode, seCtrl, seSrc, aluSrc1, aluSrc4, fwSrc, pcSrc, memRead, memWrite, cpCtrl, regWrite, aluOp, memToReg);
+        $monitor($time, " opCode = %b funCode = %b fw_opCode = %b fw_funCode = %b seCtrl = %b seSrc = %b aluSrc1 = %b aluSrc4 = %b \n fwSrc = %b pcSrc = %b memRead = %b memWrite = %b cpCtrl = %b regWrite = %b aluOp = %b memToReg = %b", opCode, funCode, fw_opCode, fw_funCode, seCtrl, seSrc, aluSrc1, aluSrc4, fwSrc, pcSrc, memRead, memWrite, cpCtrl, regWrite, aluOp, memToReg);
 
-    control g1(opCode, funCode, aluOp, seSrc, cpCtrl, memWrite, memRead, memToReg, regWrite, seCtrl, aluSrc1, aluSrc4, fwSrc, pcSrc);
+    control g1(opCode, funCode, fw_opCode, fw_funCode, seSrc, cpCtrl, memWrite, memRead, memToReg, regWrite, seCtrl, aluSrc1, aluSrc4, fwSrc, pcSrc);
 
     initial begin
         opCode = 0; funCode = 4;
