@@ -1,5 +1,3 @@
-`include "aluControl.v"
-
 module control(opCode, funCode, fw_opCode, fw_funCode, seSrc, cpCtrl, memWrite, memRead, memToReg,
                regWrite, seCtrl, aluSrc1, aluSrc4, fwSrc, pcSrc);
     input [3:0] opCode, funCode;
