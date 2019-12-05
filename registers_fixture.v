@@ -41,5 +41,4 @@ module registers_fixture;
 	begin
 		#160 $finish;
 	end
-
 endmodule
