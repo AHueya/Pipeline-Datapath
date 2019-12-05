@@ -38,8 +38,5 @@ module instructionMem(input clk, rst, input [7:0] addr, output reg [15:0] inst_o
 	end
 	always @ (*) begin
 		inst_out <= mem[addr];
-	end
-	
-	
-	
+	end	
 endmodule
