@@ -33,7 +33,4 @@ module registers (input [3:0] regAddress1, regAddress2, writeAddress, input [15:
 				mem[15] <= writeR15;
 			end		
 		end
-	
-
-
 endmodule
