@@ -26,9 +26,7 @@ module programCounter_fixture;
 		forever #10 clk = ~clk;
 	end
 
-
 	initial begin
 		#100 $finish;
 	end
-
 endmodule
