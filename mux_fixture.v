@@ -24,18 +24,9 @@ module mux_fixture;
 		#10 sel = 0; d0 = 90; d1 = 100;
         end
 
-	// Setup the clock to toggle every 10 time units
-//        initial
-//        begin
-//        	CLOCK = 1'b0;
-//                forever #10 CLOCK = ~CLOCK;
-//        end
-
-
         initial
         begin
 		#50
                 $finish;
         end
-           
 endmodule
