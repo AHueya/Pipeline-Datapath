@@ -4,15 +4,15 @@ module registerForward_fixture;
 	reg clk;
 	reg [3:0] op1, op2, memRd, wbRd;
 	reg memRegWrite, wbRegWrite;
-	wire [1:0] aluSrc1, aluSrc2;
+	wire [1:0] aluSrc3, aluSrc2;
 	
 	initial
 		$vcdpluson;
 
 	initial
-		$monitor ($time, " op1 = %b op2 = %b memRd = %b wbRd = %b memRegWrite = %d wbRegWrite = %d aluSrc1 = %b aluSrc2 = %b ",op1, op2, memRd, wbRd, memRegWrite, wbRegWrite, aluSrc1, aluSrc2);
+		$monitor ($time, " op1 = %b op2 = %b memRd = %b wbRd = %b memRegWrite = %d wbRegWrite = %d aluSrc3 = %b aluSrc2 = %b ",op1, op2, memRd, wbRd, memRegWrite, wbRegWrite, aluSrc3, aluSrc2);
 
-	registerForward g1 (.op1(op1), .op2(op2), .memRd(memRd), .wbRd(wbRd), .memRegWrite(memRegWrite), .wbRegWrite(wbRegWrite), .aluSrc1(aluSrc1), .aluSrc2(aluSrc2));
+	registerForward g1 (.op1(op1), .op2(op2), .memRd(memRd), .wbRd(wbRd), .memRegWrite(memRegWrite), .wbRegWrite(wbRegWrite), .aluSrc2(aluSrc2), .aluSrc3(aluSrc3));
 
 	initial
 	begin

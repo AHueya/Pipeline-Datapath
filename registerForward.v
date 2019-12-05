@@ -1,7 +1,7 @@
-module registerForward(input [3:0] op1, op2, memRd, wbRd, input memRegWrite, wbRegWrite, output reg [1:0] aluSrc1, aluSrc2);
+module registerForward(input [3:0] op1, op2, memRd, wbRd, input memRegWrite, wbRegWrite, output reg [1:0] aluSrc2, aluSrc3);
 	always @ (*) begin
-		aluSrc1 <= 2'b00;
-		aluSrc2 <= 2'b00;
+		aluSrc2<= 2'b00;
+		aluSrc3 <= 2'b00;
 
 		if (memRegWrite & memRd != 0 & memRd == op1)
 			aluSrc3 <= 2'b10;
