@@ -36,5 +36,4 @@ module instructionMem_fixture;
            begin
               #140 $finish;
            end
-         
 endmodule
